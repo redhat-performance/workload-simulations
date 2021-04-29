@@ -1,0 +1,29 @@
+# Example fio jobfile for testing basic I/O with use of fdatasync
+# Cribbed mercilessly from pbench-fio.
+
+[global]
+bs = 4,64,1024
+runtime = 30
+ioengine = sync
+iodepth = 32
+direct = 1
+sync = 0
+time_based = 1
+clocksource = gettimeofday
+ramp_time = 5
+write_bw_log = fio
+write_iops_log = fio
+write_lat_log = fio
+log_avg_msec = 1000
+write_hist_log = fio
+log_hist_msec = 10000
+fdatasync = 1
+# log_hist_coarseness = 4 # 76 bins
+
+[TheJob]
+directory = /test
+rw = read,write,randread,randwrite
+size = 4096M
+# If you want to specify more than 1 process per fio client host/pod,
+# add --numjobs=K to your pbench-fio command.
+numjobs = 1
