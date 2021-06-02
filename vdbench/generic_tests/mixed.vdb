@@ -1,0 +1,14 @@
+*
+* vdbench pattern: Generic tests with mixed worload
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: examples for running mixed workloads with random/sequential patterns for specific block sizes
+*
+create_anchors=yes
+data_errors=1000
+hd=default,user=root,shell=ssh,vdbench=c:/\vdbench,jvms=1
+fsd=default,depth=0,width=300,files=16,size=10mb
+fsd=fsd0,anchor=c:/\vm0_testfile
+fwd=8KiB_70_read_30write,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=random,xfersize=8k,rdpct=70
+fwd=64KiB_50_read_50write,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=sequential,xfersize=64k,rdpct=50
+rd=8KiB_70_read_30write,fwd=8KiB_70_read_30write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=12,pause=30
+rd=64KiB_50_read_50write,fwd=64KiB_50_read_50write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=8,pause=30
