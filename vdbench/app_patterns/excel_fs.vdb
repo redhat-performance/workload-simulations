@@ -1,0 +1,15 @@
+*
+* vdbench pattern: Micorsoft Excel for file system
+* Author: Boaz Ben Shabat.
+*
+create_anchors=yes
+data_errors=1000
+hd=default,user=root,shell=ssh,vdbench=c:/\vdbench,jvms=1
+fsd=default,depth=0,width=1,files=7,size=40mb
+fsd=fsd0,anchor=c:/\vm0_testfile
+fwd=fillup,fsd=fsd0,openflags=directio,operation=write,fileio=sequential,fileselect=sequential,xfersize=1024k,threads=1
+fwd=EXCEL1,fsd=fsd0,openflags=directio,operation=write,fileio=(random,shared),fileselect=random,xfersize=52k,rdpct=0,skew=55,threads=1
+fwd=EXCEL2,fsd=fsd0,openflags=directio,operation=write,fileio=(random,shared),fileselect=random,xfersize=64k,rdpct=0,skew=40,threads=1
+fwd=EXCEL3,fsd=fsd0,openflags=directio,operation=read,fileio=(random,shared),fileselect=random,xfersize=6mb,rdpct=100,skew=5,threads=1
+rd=fillup,fwd=fillup_*,fwdrate=max,format=(restart,yes),elapsed=6000,interval=5,threads=2,maxdata=55gb
+rd=EXCEL,fwd=EXCEL*,fwdrate=1,format=(restart,yes),elapsed=600,interval=5,warmup=180,threads=1

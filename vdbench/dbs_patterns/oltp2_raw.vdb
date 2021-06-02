@@ -1,0 +1,18 @@
+*
+* vdbench pattern: OLTP2 for raw disk
+* Author: Boaz Ben Shabat.
+*
+data_errors=1000
+hd=default,jvms=1
+hd=default,user=root
+sd=sd1,lun=\\.\d:,openflags=directio
+wd=fillup,sd=*,seekpct=100,xfersize=128k,rdpct=0,rhpct=0,range=(1,99)
+wd=OLTP2_1,sd=*,seekpct=100,xfersize=8k,rdpct=100,rhpct=100,skew=20,range=(1,99)
+wd=OLTP2_2,sd=*,seekpct=100,xfersize=8k,rdpct=100,rhpct=0,skew=45,range=(1,99)
+wd=OLTP2_3,sd=*,seekpct=100,xfersize=8k,rdpct=0,rhpct=0,skew=15,range=(1,99)
+wd=OLTP2_4,sd=*,seekpct=0,xfersize=64k,rdpct=100,rhpct=0,skew=10,range=(1,99)
+wd=OLTP2_5,sd=*,seekpct=0,xfersize=64k,rdpct=0,rhpct=0,skew=10,range=(1,99)
+
+rd=fillup,wd=fillup,iorate=max,elapsed=1200,interval=5,thread=1,warmup=30
+rd=OLTP2,,wd=OLTP1*,iorate=max,elapsed=1200,interval=5,thread=1,warmup=30
+
