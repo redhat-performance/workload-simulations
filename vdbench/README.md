@@ -21,8 +21,6 @@ or:
 ```
 
 ## Directory tree
-
-.
  * [app_patterns](./app_patterns)
    * [excel_fs.vdb](./app_patterns/excel_fs.vdb)
  * [classic_tests](./classic_tests)
