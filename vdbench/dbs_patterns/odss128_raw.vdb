@@ -1,7 +1,9 @@
 *
-* vdbench pattern: ODSS128 for raw disk
-* Author: Boaz Ben Shabat.
+* Vdbench pattern: ODSS128 for raw disk
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: this pattern simulate streaming applications and backup applications
 *
+
 data_errors=1000
 hd=default,jvms=1
 hd=default,user=root

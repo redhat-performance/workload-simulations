@@ -1,6 +1,7 @@
 #
 # fio pattern: ODSS2 for filesystem
-# Author: Boaz Ben Shabat.
+# Author: Boaz Ben Shabat bbenshab@redhat.com.
+# description: this pattern simulate data warehouse applications and backup applications
 #
 
 [global]

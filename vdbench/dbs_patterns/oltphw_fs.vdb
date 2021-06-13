@@ -1,6 +1,7 @@
 *
 * vdbench pattern: OLTPHW for file system
-* Author: Boaz Ben Shabat.
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: this pattern simulate large Oracle applications and heavy weight transactions
 *
 
 create_anchors=yes

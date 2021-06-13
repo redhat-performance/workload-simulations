@@ -1,6 +1,7 @@
 *
-* vdbench pattern: ODSS128 for file system
-* Author: Boaz Ben Shabat.
+* Vdbench pattern: OLTPHW for file system
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: this pattern simulate streaming applications and backup applications
 *
 create_anchors=yes
 data_errors=1000

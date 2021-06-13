@@ -1,6 +1,7 @@
 #
-# fio pattern: OLTP1 for filesystem
-# Author: Boaz Ben Shabat.
+# fio pattern: OLTP1  for filesystem
+# Author: Boaz Ben Shabat bbenshab@redhat.com.
+# description: this pattern simulate mail applications and online transaction processing
 #
 
 [global]

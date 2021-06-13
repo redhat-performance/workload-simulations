@@ -1,6 +1,8 @@
 *
 * vdbench pattern: Micorsoft Excel for file system
-* Author: Boaz Ben Shabat.
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* description: this pattern simulate a user working on  Microsoft Execl while commiting the following actions:
+* filling cells with alphanumeric values , filling cells with none alphanumeric values, switching between tabs
 *
 create_anchors=yes
 data_errors=1000

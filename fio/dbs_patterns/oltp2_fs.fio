@@ -1,6 +1,7 @@
 #
-# fio pattern: OLTP1 for filesystem
-# Author: Boaz Ben Shabat.
+# fio pattern: OLTP2 for filesystem
+# Author: Boaz Ben Shabat bbenshab@redhat.com.
+# Description: this pattern simulate small Oracle applications and small weight transactions
 #
 
 [global]

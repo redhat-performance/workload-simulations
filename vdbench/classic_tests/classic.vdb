@@ -1,6 +1,7 @@
 *
 * vdbench pattern: Generic tests with mixed worload
-* Author: Boaz Ben Shabat.
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: multiple examples for running read/writes/mixed workloads with random/sequential patterns for specific block sizes
 *
 create_anchors=yes
 data_errors=1000

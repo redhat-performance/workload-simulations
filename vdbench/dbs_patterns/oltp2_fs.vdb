@@ -1,6 +1,7 @@
 *
 * vdbench pattern: OLTP2 for filesystem
-* Author: Boaz Ben Shabat.
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: this pattern simulate small Oracle applications and small weight transactions
 *
 
 create_anchors=yes

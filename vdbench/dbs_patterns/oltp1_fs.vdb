@@ -1,7 +1,9 @@
 *
 * vdbench pattern: OLTP1 for filesystem
-* Author: Boaz Ben Shabat.
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: this pattern simulate mail applications and online transaction processing
 *
+
 create_anchors=yes
 data_errors=1000
 compratio=2

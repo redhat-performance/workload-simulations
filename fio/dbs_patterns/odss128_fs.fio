@@ -1,6 +1,7 @@
 #
 # fio pattern: OLTPHW for filesystem
-# Author: Boaz Ben Shabat.
+# Author: Boaz Ben Shabat bbenshab@redhat.com.
+# Description: this pattern simulate streaming applications and backup applications
 #
 
 [global]
