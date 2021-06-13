@@ -40,7 +40,6 @@ or:
 └── README.md
 
 
-
    [vdbench]: <https://www.oracle.com/downloads/server-storage/vdbench-downloads.html>
 
 
