@@ -22,23 +22,23 @@ or:
 
 ## Directory tree
 
-├── app_patterns
-│   └── excel_fs.vdb
-├── classic_tests
-│   └── classic.vdb
-├── dbs_patterns
-│   ├── odss128_fs.vdb
-│   ├── odss128_raw.vdb
-│   ├── odss2_fs.vdb
-│   ├── odss2_raw.vdb
-│   ├── oltp1_fs.vdb
-│   ├── oltp1_raw.vdb
-│   ├── oltp2_fs.vdb
-│   ├── oltp2_raw.vdb
-│   ├── oltphw_fs.vdb
-│   └── oltphw_raw.vdb
-└── README.md
-
+.
+ * [app_patterns](./app_patterns)
+   * [excel_fs.vdb](./app_patterns/excel_fs.vdb)
+ * [classic_tests](./classic_tests)
+   * [classic.vdb](./classic_tests/classic.vdb)
+ * [dbs_patterns](./dbs_patterns)
+   * [odss128_fs.vdb](./dbs_patterns/odss128_fs.vdb)
+   * [odss128_raw.vdb](./dbs_patterns/odss128_raw.vdb)
+   * [odss2_fs.vdb](./dbs_patterns/odss2_fs.vdb)
+   * [odss2_raw.vdb](./dbs_patterns/odss2_raw.vdb)
+   * [oltp1_fs.vdb](./dbs_patterns/oltp1_fs.vdb)
+   * [oltp1_raw.vdb](./dbs_patterns/oltp1_raw.vdb)
+   * [oltp2_fs.vdb](./dbs_patterns/oltp2_fs.vdb)
+   * [oltp2_raw.vdb](./dbs_patterns/oltp2_raw.vdb)
+   * [oltphw_fs.vdb](./dbs_patterns/oltphw_fs.vdb)
+   * [oltphw_raw.vdb](./dbs_patterns/oltphw_raw.vdb)
+ * [README.md](./README.md)
 
    [vdbench]: <https://www.oracle.com/downloads/server-storage/vdbench-downloads.html>
 
