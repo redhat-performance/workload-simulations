@@ -20,6 +20,25 @@ or:
 ./vdbench.sh -f xxxxx
 ```
 
+## Directory tree
+
+├── app_patterns
+│   └── excel_fs.vdb
+├── classic_tests
+│   └── classic.vdb
+├── dbs_patterns
+│   ├── odss128_fs.vdb
+│   ├── odss128_raw.vdb
+│   ├── odss2_fs.vdb
+│   ├── odss2_raw.vdb
+│   ├── oltp1_fs.vdb
+│   ├── oltp1_raw.vdb
+│   ├── oltp2_fs.vdb
+│   ├── oltp2_raw.vdb
+│   ├── oltphw_fs.vdb
+│   └── oltphw_raw.vdb
+└── README.md
+
 
    [vdbench]: <https://www.oracle.com/downloads/server-storage/vdbench-downloads.html>
 
