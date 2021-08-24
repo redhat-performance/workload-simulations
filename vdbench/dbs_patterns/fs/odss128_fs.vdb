@@ -1,0 +1,20 @@
+*
+* Vdbench pattern: OLTPHW for file system
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: this pattern simulates streaming applications and backup applications
+*
+create_anchors=yes
+data_errors=1000
+compratio=2
+hd=default,user=root,shell=ssh,vdbench=c:/\vdbench,jvms=1
+fsd=default,depth=0,width=300,files=16,size=10mb
+fsd=fsd0,anchor=c:/\vm0_testfile
+fwd=fillup_vm0,fsd=fsd0,openflags=directio,operation=write,fileio=sequential,fileselect=sequential,xfersize=1024k,threads=1
+fwd=ODSS128_1,fsd=fsd0,operation=read,fileio=random,fileselect=random,xfersize=4k,rdpct=100,skew=18,threads=16
+fwd=ODSS128_2,fsd=fsd0,openflags=directio,operation=read,fileio=random,fileselect=random,xfersize=4k,rdpct=100,skew=18,threads=16
+fwd=ODSS128_3,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=random,xfersize=4k,rdpct=0,skew=4,threads=16
+fwd=ODSS128_4,fsd=fsd0,openflags=directio,operation=read,fileio=sequential,fileselect=random,xfersize=64k,skew=48,threads=16
+fwd=ODSS128_5,fsd=fsd0,openflags=directio,operation=write,fileio=sequential,fileselect=random,xfersize=64k,skew=12,threads=16
+
+rd=fillup,fwd=fillup_*,fwdrate=max,format=(restart,yes),elapsed=6000,interval=5,threads=2,maxdata=55gb
+rd=ODSS128,fwd=ODSS128_*,fwdrate=max,format=(restart,yes),elapsed=6000,interval=5,threads=12,maxdata=2048gb

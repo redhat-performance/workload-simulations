@@ -1,0 +1,44 @@
+*
+* vdbench pattern: Generic worload
+* Author: Boaz Ben Shabat bbenshab@redhat.com.
+* Description: multiple examples for running read/writes workloads with random/sequential patterns for specific block sizes
+*
+create_anchors=yes
+data_errors=1000
+hd=default,user=root,shell=ssh,vdbench=c:/\vdbench,jvms=1
+fsd=default,depth=0,width=300,files=16,size=10mb
+fsd=fsd0,anchor=c:/\vm0_testfile
+fwd=0.5KiB_cache_read,fsd=fsd0,operation=read,fileio=random,fileselect=random,xfersize=0.5k
+fwd=4KiB_cache_read,fsd=fsd0,operation=read,fileio=random,fileselect=random,xfersize=4k
+fwd=64KiB_cache_read,fsd=fsd0,operation=read,fileio=random,fileselect=random,xfersize=64k
+fwd=0.5KiB_cache_write,fsd=fsd0,operation=write,fileio=random,fileselect=random,xfersize=0.5k
+fwd=4KiB_cache_write,fsd=fsd0,operation=write,fileio=random,fileselect=random,xfersize=4k
+fwd=64KiB_cache_write,fsd=fsd0,operation=write,fileio=random,fileselect=random,xfersize=64k
+fwd=4KiB_random_read,fsd=fsd0,openflags=directio,operation=read,fileio=random,fileselect=random,xfersize=4k
+fwd=8KiB_random_read,fsd=fsd0,openflags=directio,operation=read,fileio=random,fileselect=random,xfersize=8k
+fwd=64KiB_random_read,fsd=fsd0,openflags=directio,operation=read,fileio=random,fileselect=random,xfersize=64k
+fwd=128KiB_random_read,fsd=fsd0,openflags=directio,operation=read,fileio=random,fileselect=random,xfersize=128k
+fwd=1024KiB_random_read,fsd=fsd0,openflags=directio,operation=read,fileio=random,fileselect=random,xfersize=1024k
+fwd=4KiB_random_write,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=random,xfersize=4k
+fwd=8KiB_random_write,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=random,xfersize=8k
+fwd=64KiB_random_write,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=random,xfersize=64k
+fwd=128KiB_random_write,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=random,xfersize=128k
+fwd=1024KiB_random_write,fsd=fsd0,openflags=directio,operation=write,fileio=random,fileselect=random,xfersize=1024k
+fwd=64KiB_seq_read,fsd=fsd0,openflags=directio,operation=write,fileio=sequential,fileselect=random,xfersize=64k
+fwd=64KiB_seq_write,fsd=fsd0,openflags=directio,operation=write,fileio=sequential,fileselect=random,xfersize=64k
+rd=0.5KiB_cache_read,fwd=0.5KiB_cache_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,hitarea=2m,threads=16,pause=30
+rd=4KiB_cache_read,fwd=4KiB_cache_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,hitarea=2m,threads=16,pause=30
+rd=64KiB_cache_read,fwd=64KiB_cache_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,hitarea=2m,threads=8,pause=30
+rd=0.5KiB_cache_write,fwd=0.5KiB_cache_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,hitarea=2m,threads=16,pause=30
+rd=4KiB_cache_write,fwd=4KiB_cache_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,hitarea=2m,threads=16,pause=30
+rd=64KiB_cache_write,fwd=64KiB_cache_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,hitarea=2m,threads=8,pause=30
+rd=4KiB_random_read,fwd=4KiB_random_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=16,pause=30
+rd=8KiB_random_read,fwd=8KiB_random_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=12,pause=30
+rd=64KiB_random_read,fwd=64KiB_random_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=8,pause=30
+rd=128KiB_random_read,fwd=128KiB_random_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=8,pause=30
+rd=1024KiB_random_read,fwd=1024KiB_random_read_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=8,pause=30
+rd=4KiB_random_write,fwd=4KiB_random_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=16,pause=30
+rd=8KiB_random_write,fwd=8KiB_random_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=12,pause=30
+rd=64KiB_random_write,fwd=64KiB_random_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=8,pause=30
+rd=128KiB_random_write,fwd=128KiB_random_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=8,pause=30
+rd=1024KiB_random_write,fwd=1024KiB_random_write_vm*,fwdrate=max,format=restart,elapsed=600,interval=5,warmup=180,threads=8,pause=30
